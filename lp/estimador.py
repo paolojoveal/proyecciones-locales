@@ -49,11 +49,24 @@ def rezagar(s: np.ndarray, j: int) -> np.ndarray:
     return out
 
 
+def identificado(Z: np.ndarray, j: int, tolerancia: float = 1e-8) -> bool:
+    """¿La columna j aporta variación que las demás columnas no explican?"""
+    otras = np.delete(Z, j, axis=1)
+    resto = Z[:, j] - otras @ np.linalg.lstsq(otras, Z[:, j], rcond=None)[0]
+    return bool(np.linalg.norm(resto) > tolerancia * np.linalg.norm(Z[:, j] - Z[:, j].mean()))
+
+
 def covarianza_robusta(Z: np.ndarray, u: np.ndarray, rezagos_hac: int = 0) -> np.ndarray:
     """Matriz de covarianzas de MCO. Con `rezagos_hac = 0` es la de Eicker-Huber-White; con L > 0,
-    la de Newey-West con núcleo de Bartlett. Ambas con la corrección n / (n - k)."""
-    n, k = Z.shape
-    pan = np.linalg.inv(Z.T @ Z)
+    la de Newey-West con núcleo de Bartlett. Ambas con la corrección n / (n - k), donde k es el
+    rango de Z.
+
+    Se usa la pseudoinversa: si hay controles que son combinación exacta de otros (por ejemplo,
+    cuando el impulso es la primera diferencia de la respuesta, x_{t-1} = y_{t-1} - y_{t-2}), la
+    varianza de los coeficientes que sí están identificados sigue siendo la correcta.
+    """
+    n, k = len(Z), np.linalg.matrix_rank(Z)
+    pan = np.linalg.pinv(Z.T @ Z)
     zu = Z * u[:, None]
     S = zu.T @ zu
     for lag in range(1, min(rezagos_hac, n - 1) + 1):
@@ -99,6 +112,9 @@ def proyeccion_local(y, x, controles=None, horizontes: int = 24, rezagos: int = 
         Zh, dh = Z[ok], dep[ok]
         if len(dh) <= Z.shape[1] + 2:
             continue
+        if not identificado(Zh, 1):
+            raise ValueError("El impulso es combinación lineal exacta de los controles y sus rezagos: "
+                             "su efecto no está identificado. Revisa los controles o reduce los rezagos.")
         b, *_ = np.linalg.lstsq(Zh, dh, rcond=None)
         V = covarianza_robusta(Zh, dh - Zh @ b, 0 if metodo == "aumentada" else h)
         irf[h], ee[h], n[h] = b[1], np.sqrt(V[1, 1]), len(dh)

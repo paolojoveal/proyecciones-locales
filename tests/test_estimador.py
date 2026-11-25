@@ -67,6 +67,28 @@ def test_la_version_acumulada_de_un_paseo_aleatorio_vale_uno():
     np.testing.assert_allclose(res.irf, 1.0, atol=0.03)
 
 
+def test_controles_colineales_no_rompen_la_estimacion():
+    """Con el nivel como respuesta y su diferencia como impulso, los rezagos son colineales:
+    x_{t-1} = y_{t-1} - y_{t-2}. El coeficiente del impulso sigue identificado."""
+    rng = np.random.default_rng(7)
+    choque = rng.normal(size=3_000)
+    nivel = np.cumsum(choque)
+    res = proyeccion_local(nivel, choque, horizontes=3, rezagos=2, acumulada=True)
+    assert np.isfinite(res.irf).all() and np.isfinite(res.ee).all() and (res.ee > 0).all()
+    np.testing.assert_allclose(res.irf, 1.0, atol=0.08)
+    sin_colinealidad = proyeccion_local(nivel, choque, horizontes=3, rezagos=0, metodo="hac", acumulada=True)
+    np.testing.assert_allclose(res.irf, sin_colinealidad.irf, atol=0.08)
+
+
+def test_un_impulso_no_identificado_falla_con_mensaje_claro():
+    rng = np.random.default_rng(8)
+    w = rng.normal(size=(500, 2))
+    x = 2 * w[:, 0] - w[:, 1]                                  # combinación exacta de los controles
+    y = rng.normal(size=500)
+    with pytest.raises(ValueError, match="no está identificado"):
+        proyeccion_local(y, x, controles=w, horizontes=2, rezagos=1)
+
+
 def test_las_observaciones_excluidas_no_entran():
     rng = np.random.default_rng(5)
     y = simular_ar1(0.5, 400, rng)
