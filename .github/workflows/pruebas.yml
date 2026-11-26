@@ -23,4 +23,4 @@ jobs:
       - name: Pruebas unitarias
         run: pytest -q
       - name: La simulación corre de principio a fin (versión corta)
-        run: python -m lp.montecarlo --repeticiones 100
+        run: python -m lp.montecarlo --repeticiones 100 --B 199

@@ -1,26 +1,26 @@
-respuesta,mes,efecto,inferior,superior,sin controles globales,n
-Tipo de cambio (S/ por US$) (%),0,-0.4518,-0.7446,-0.1589,-0.9071,235
-Tipo de cambio (S/ por US$) (%),3,-0.8741,-1.6726,-0.0756,-1.4494,232
-Tipo de cambio (S/ por US$) (%),6,-0.0643,-1.2518,1.1231,-1.1242,229
-Tipo de cambio (S/ por US$) (%),12,-0.011,-1.748,1.7259,-0.5438,223
-Tipo de cambio (S/ por US$) (%),24,0.1947,-2.0588,2.4482,-0.9417,211
-"Riesgo país, EMBIG (pb)",0,-9.5053,-15.5619,-3.4487,-23.7753,235
-"Riesgo país, EMBIG (pb)",3,-19.3315,-30.4311,-8.2319,-32.1807,232
-"Riesgo país, EMBIG (pb)",6,-12.6379,-27.9669,2.691,-15.4146,229
-"Riesgo país, EMBIG (pb)",12,0.7652,-22.49,24.0204,3.8495,223
-"Riesgo país, EMBIG (pb)",24,4.9752,-7.7432,17.6936,8.6123,211
-PBI desestacionalizado (%),0,0.1314,-0.12,0.3828,0.1755,218
-PBI desestacionalizado (%),3,0.2327,-0.1092,0.5746,0.2007,212
-PBI desestacionalizado (%),6,0.6794,0.274,1.0847,0.5775,206
-PBI desestacionalizado (%),12,0.9084,0.3392,1.4777,0.7975,196
-PBI desestacionalizado (%),24,0.3624,-0.2415,0.9664,0.2892,184
-Índice de precios al consumidor (%),0,0.0183,-0.0591,0.0958,-0.0407,235
-Índice de precios al consumidor (%),3,0.2046,-0.0129,0.422,0.0294,232
-Índice de precios al consumidor (%),6,0.6049,0.2763,0.9335,0.2338,229
-Índice de precios al consumidor (%),12,0.7892,0.2575,1.3209,0.5359,223
-Índice de precios al consumidor (%),24,1.4583,0.5985,2.318,0.8536,211
-Tasa de referencia (pp),0,-0.0001,-0.0363,0.0362,0.0195,235
-Tasa de referencia (pp),3,0.0788,-0.0541,0.2118,0.0147,232
-Tasa de referencia (pp),6,0.3455,0.1121,0.579,0.186,229
-Tasa de referencia (pp),12,0.701,0.2949,1.107,0.5562,223
-Tasa de referencia (pp),24,0.5514,0.0688,1.034,0.3547,211
+respuesta,mes,efecto,inferior,superior,inferior_normal,superior_normal,sin controles globales,n
+Tipo de cambio (S/ por US$) (%),0,-0.4518,-0.7206,-0.2085,-0.7446,-0.1589,-0.9071,235
+Tipo de cambio (S/ por US$) (%),3,-0.8741,-1.756,-0.1204,-1.6726,-0.0756,-1.4494,232
+Tipo de cambio (S/ por US$) (%),6,-0.0643,-1.5201,1.1026,-1.2518,1.1231,-1.1242,229
+Tipo de cambio (S/ por US$) (%),12,-0.011,-1.9989,1.8092,-1.748,1.7259,-0.5438,223
+Tipo de cambio (S/ por US$) (%),24,0.1947,-2.4429,2.6341,-2.0588,2.4482,-0.9417,211
+"Riesgo país, EMBIG (pb)",0,-9.5053,-17.6239,-5.1542,-15.5619,-3.4487,-23.7753,235
+"Riesgo país, EMBIG (pb)",3,-19.3315,-32.6056,-10.0195,-30.4311,-8.2319,-32.1807,232
+"Riesgo país, EMBIG (pb)",6,-12.6379,-31.8866,0.2285,-27.9669,2.691,-15.4146,229
+"Riesgo país, EMBIG (pb)",12,0.7652,-26.9787,26.2452,-22.49,24.0204,3.8495,223
+"Riesgo país, EMBIG (pb)",24,4.9752,-9.6772,19.5059,-7.7432,17.6936,8.6123,211
+PBI desestacionalizado (%),0,0.1314,-0.145,0.3644,-0.12,0.3828,0.1755,218
+PBI desestacionalizado (%),3,0.2327,-0.0919,0.5859,-0.1092,0.5746,0.2007,212
+PBI desestacionalizado (%),6,0.6794,0.2615,1.1119,0.274,1.0847,0.5775,206
+PBI desestacionalizado (%),12,0.9084,0.3336,1.6082,0.3392,1.4777,0.7975,196
+PBI desestacionalizado (%),24,0.3624,-0.225,1.1589,-0.2415,0.9664,0.2892,184
+Índice de precios al consumidor (%),0,0.0183,-0.0457,0.0917,-0.0591,0.0958,-0.0407,235
+Índice de precios al consumidor (%),3,0.2046,-0.0095,0.4215,-0.0129,0.422,0.0294,232
+Índice de precios al consumidor (%),6,0.6049,0.2398,0.9569,0.2763,0.9335,0.2338,229
+Índice de precios al consumidor (%),12,0.7892,0.2549,1.4226,0.2575,1.3209,0.5359,223
+Índice de precios al consumidor (%),24,1.4583,0.5035,2.5543,0.5985,2.318,0.8536,211
+Tasa de referencia (pp),0,-0.0001,-0.039,0.0283,-0.0363,0.0362,0.0195,235
+Tasa de referencia (pp),3,0.0788,-0.0549,0.2093,-0.0541,0.2118,0.0147,232
+Tasa de referencia (pp),6,0.3455,0.101,0.5966,0.1121,0.579,0.186,229
+Tasa de referencia (pp),12,0.701,0.2925,1.2428,0.2949,1.107,0.5562,223
+Tasa de referencia (pp),24,0.5514,0.0806,1.189,0.0688,1.034,0.3547,211
