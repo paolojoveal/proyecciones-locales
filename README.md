@@ -2,8 +2,6 @@
 
 [![Pruebas](https://github.com/paolojoveal/proyecciones-locales/actions/workflows/pruebas.yml/badge.svg)](https://github.com/paolojoveal/proyecciones-locales/actions/workflows/pruebas.yml)
 ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-2a78d6)
-![Licencia MIT](https://img.shields.io/badge/licencia-MIT-52514e)
-
 **¿Cuánto se puede confiar en las bandas de una función impulso-respuesta?**
 
 Las proyecciones locales (Jordà, 2005) son el método más usado hoy en macroeconomía aplicada para estimar el efecto dinámico de un choque. Este repositorio las implementa con `numpy`, mide por simulación si sus intervalos de confianza cumplen lo que prometen y las aplica a una pregunta sobre la economía peruana.
@@ -142,3 +140,7 @@ tests/                 Pruebas automáticas
 **Paolo Jove** · Estudiante de 8.º semestre (por iniciar el 9.º) en la **Pontificia Universidad Católica del Perú (PUCP)**. Más proyectos en [portafolio-finanzas](https://github.com/paolojoveal/portafolio-finanzas) y [auditoria-analitica-ventas](https://github.com/paolojoveal/auditoria-analitica-ventas).
 
 [LinkedIn](https://www.linkedin.com/in/paolo-jove-085647127)
+
+---
+
+<sub>© 2026 Paolo Jove. Todos los derechos reservados.</sub>
